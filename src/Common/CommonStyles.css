@@ -1,0 +1,26 @@
+.menus {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.is-current {
+    background-color: black;
+    color: white;
+    border-radius: 10;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+}
+
+.hierarchy_menus {
+    background-color: white;
+    color: grey;
+    border-radius: 10;
+}
+
+.addBtn {
+    background-color: 'yellow';
+    border-color: 'yellow';
+    border-radius: '10%';
+    width: 60;
+    height: 40
+}

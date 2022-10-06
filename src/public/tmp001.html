@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Restaurant Jannat </title>
+    <!--container column start-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/w3_4.css">
+    <!--link rel="stylesheet" href="css/font-awesome.min.css"-->
+    <link href="css/w3.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <!--container column end-->
+    <!-- my styles start -->
+    <style>
+        div.sticky {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
+          padding-top: 100px;
+        }
+    </style>
+    <style>
+        div.menus_big {
+            display: none;
+        }
+        div.menus_small {
+            display: block;
+        }
+        
+        @media screen and (min-width: 950px) {
+            div.menus_big {
+                display: block;
+          }
+            div.menus_small {
+                display: none;
+          }
+        }
+    </style>
+    <!-- my styles End -->
+    <!-- My Script Start -->
+    <script>
+        $(document).ready(function(){
+          $("btn_Suppen").click(function(){
+            $("p_Suppen").attr({ "style" : "border: 2px solid rgb(0, 0, 0); border-radius: 15px; background-color: black; color: blanchedalmond;" });
+            /*
+            $fcs = $(".fc");
+            var i;
+            for(i = 0; i<$fcs.length; i++){
+               fcs[i].style = ""; 
+            }
+            */
+          });
+        });
+    </script>
+
+    
+    <script>
+        function openCity(evt, x) {
+        var i, tablinks;
+        
+        tablinks = document.getElementsByClassName("fc");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style = "border: 0px solid rgb(0, 0, 0); border-radius: 15px; background-color: white; color: black; text-align: right;";
+        }
+        tablinks[x-1].style = "border: 2px solid rgb(0, 0, 0); border-radius: 15px; background-color: black; color: blanchedalmond; text-align: right;";
+        }
+        
+    </script>
+    
+    
+    <script>
+    function searchDish(evt) {
+        var i, tablinks, dish;
+        tablinks = document.getElementsByClassName("fc");
+        // console.log(document.getElementById("searchValue"));
+        dish = document.getElementById("searchValue").value;
+        //$dish  = $("#searchDish").val();
+        // console.log(dish);
+        for (i = 0; i < tablinks.length; i++) {
+            if (tablinks[i].innerText.lastIndexOf(dish) == -1){
+                tablinks[i].style = "display : none";
+            }
+            else console.log(i);
+        }
+    }
+    </script>
+    <!-- My Script End -->
+</head>
+
+<body>
+    <!-- Header Start-->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <div class="d-flex justify-content-between align-content-center" style="align-items: center;">
+                <div style="margin-left: 50px;">
+                    <a href="img/logo.png" class="w3-bar-item w3-button w3-padding-large"><img src="img/logo.png"></a>
+                </div>
+                <div class = "menus_big">
+                    <div style="text-align: right;" class="w3-right w3-hide-small">
+                        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+                        <a href="menu.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MENU</a>
+                        <a href="reservation.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">RESERVATION</a>
+                        <a href="gallery.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">GALLERY</a>
+                        <a href="contact.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+                        <a href="login.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOGIN</a>
+                        <a href="img/flag.png" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><img src="img/flag.png"></a>
+                    </div>
+                </div>
+                <div class = "menus_small" style="z-index: 1;">
+                    <div class="dropdown">
+                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                          MENU
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#"> HOME </a></li>
+                          <li><a class="dropdown-item" href="#"> MENU </a></li>
+                          <li><a class="dropdown-item" href="#"> RESERVATION </a></li>
+                          <li><a class="dropdown-item" href="#"> GALLERY </a></li>
+                          <li><a class="dropdown-item" href="#"> CONTACT </a></li>
+                          <li><a class="dropdown-item" href="#"> LOGIN </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End-->
+    
+    <!-- Page Content Start -->
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+        <div style="width:100%;height:250px;">
+            <img src="img/restaurant.png" style="width :100%; height:100%; ">
+            <div style="color: rgb(255, 255, 255); 
+                    position: absolute; 
+                    top: 150px;
+                    left: 100px;
+                    width: 400px;
+                    height: 100px;">
+                <h1> <b> Restaurant Jannat </b></h1>
+                <p> Indian Restaurant in Puchheim </p>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="sticky" style="text-align: right;">
+                        <form>
+                            <input type="button" value="Search" onclick="searchDish(event)">
+                            <input type="text" size="20" id = "searchValue">
+                        </form>
+                        <br>
+                        <div>
+                            <p class = "fc" style="border: 2px solid rgb(0, 0, 0);
+                                border-radius: 15px;
+                                background-color: black;
+                                color: blanchedalmond;" id = "p_Warme">   <a href="#warmevorspeisen"  class="w3-button w3-block" style="border-radius: 15px; text-align: right;" onclick="openCity(event, 1)"> Warme vorspeisen </a> </p>
+                            <p class = "fc" id = "p_Suppen">                <a href="#Suppen"           class="w3-button w3-block" style="border-radius: 15px; text-align: right;" onclick="openCity(event, 2)"> Suppen </a> </p>
+                            <p class = "fc" id = "p_Salate">                <a href="#Salate"           class="w3-button w3-block" style="border-radius: 15px; text-align: right;" onclick="openCity(event, 3)"> Salate </a> </p>
+                            <p class = "fc" id = "p_Beilagen">              <a href="#Beilagen"         class="w3-button w3-block" style="border-radius: 15px; text-align: right;" onclick="openCity(event, 4)"> Beilagen </a> </p>
+                            <p class = "fc" id = "p_Spezialitten">          <a href="#Spezialitten"     class="w3-button w3-block" style="border-radius: 15px; text-align: right;" onclick="openCity(event, 5)"> Spezialitäten aus dem tandoor </a> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="warmevorspeisen">
+                        <h3 style="text-align: center; padding-top: 25px;" > Warme vorspeisen </h3>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="Suppen">
+                        <h3 style="text-align: center; padding-top: 25px;" > Suppen </h3>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="Salate">
+                        <h3 style="text-align: center; padding-top: 25px;"> Salate </h3>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="Beilagen">
+                        <h3 style="text-align: center; padding-top: 25px;"> Beilagen </h3>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="w3-card w3-round w3-white">
+                            <div class="card-body">
+                                <h5><b> Gemüse Pakoras </b></h5>
+                                <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                                <button style="float: right;
+                                        background-color:rgb(228, 224, 13);
+                                        border-color: rgb(228, 224, 13);"> ADD </button>
+                                <h5><b> 4.60 € </b></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 style="text-align: center;" id="Spezialitten"> Spezialitäten aus dem tandoor </h3>
+                    <div class="w3-card w3-round w3-white">
+                        <div class="card-body">
+                            <h5><b> Gemüse Pakoras </b></h5>
+                            <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                            <button style="float: right;
+                                    background-color:rgb(228, 224, 13);
+                                    border-color: rgb(228, 224, 13);"> ADD </button>
+                            <h5><b> 4.60 € </b></h5>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="w3-card w3-round w3-white">
+                        <div class="card-body">
+                            <h5><b> Gemüse Pakoras </b></h5>
+                            <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                            <button style="float: right;
+                                    background-color:rgb(228, 224, 13);
+                                    border-color: rgb(228, 224, 13);"> ADD </button>
+                            <h5><b> 4.60 € </b></h5>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="w3-card w3-round w3-white">
+                        <div class="card-body">
+                            <h5><b> Gemüse Pakoras </b></h5>
+                            <p> frisches Gemüse in Kichererbsenmehl gebacken </p>
+                            <button style="float: right;
+                                    background-color:rgb(228, 224, 13);
+                                    border-color: rgb(228, 224, 13);"> ADD </button>
+                            <h5><b> 4.60 € </b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="sticky">
+                    <h3 style="text-align: center;"> Your Cart </h3>
+                    <img src="img/cart.png">
+                    <p style="color: darkgrey;">Please select at least one product to place an order</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Content End-->
+
+    <!-- Footer Start-->
+    <div class="mt-5 p-4 bg-dark text-white text-center">
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="col-sm-4 p-3">
+                        <pre>
+                    Lagerstraße 23
+                        82178 Puchheim
+                        <a href="#">jannatlagerstr@gmail.com</a>
+                        +49 8961203673
+                </pre>
+                    </div>
+                    <div class="col-sm-4 p-3">
+                        <pre>
+                    <b>Online Ordering System</b>
+                    Powered By
+                    <img src="img/fleska logo.png">
+                </pre>
+
+                    </div>
+                    <div class="col-sm-4 p-3">
+
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <!-- Footer End -->
+</body>
+
+</html>
